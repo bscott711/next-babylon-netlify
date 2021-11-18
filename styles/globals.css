@@ -1,9 +1,13 @@
 html,
 body {
+  overflow: hidden;
+  height: 100%;
+  position: relative;
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
     Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background: #9a9a9a;
 }
 
 * {
@@ -32,4 +36,31 @@ code {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+button {
+  background-color: #1b95e0;
+  border: none;
+  border-radius: 3px;
+  font-family: Arial;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.7em;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  padding: 4px 6px;
+  margin: 0px 1px;
+}
+
+button:hover {
+  background-color: #0c7abf;
+}
+
+#renderCanvas {
+  width: 75%;
+  height: 75%;
+  touch-action: none;
+  outline: #9a9a9a;
 }
