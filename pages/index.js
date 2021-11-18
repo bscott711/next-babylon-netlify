@@ -17,8 +17,7 @@ export default function Home() {
         <p className="description">
           Introducing the BabylonJS-Viewer
         </p>
-        <canvas id="renderCanvas" touch-action="none"></canvas>
-        <script type="module" src="./js/index.js"></script>
+
       </main>
 
       <Footer />
