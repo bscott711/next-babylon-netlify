@@ -2,7 +2,7 @@ import "@babylonjs/loaders/glTF";
 import { GLTFLoader } from "@babylonjs/loaders/glTF/2.0/glTFLoader";
 import { SceneLoader, Axis, Space } from "@babylonjs/core";
 
-async function xhrAll(url) {
+export async function xhrAll(url) {
     let xhr = new XMLHttpRequest();
     var reqHeader = new Headers({
         "Access-Control-Allow-Origin": "*",
@@ -12,15 +12,14 @@ async function xhrAll(url) {
     xhr.open("GET", url, reqHeader);
     xhr.send();
     xhr.onload = function () {
-        if (xhr.status != 200) {
+        if (xhr.status !== 200) {
             //alert ('Error:' + xhr.status);
             return;
         }
     };
 }
-export { xhrAll };
 
-async function loadLocalAsset(scene, scene_name) {
+export async function loadLocalAsset(scene, scene_name) {
     let old = scene.getNodeByName("__root__");
     let asset = await SceneLoader.LoadAssetContainerAsync(
         "",
@@ -46,9 +45,7 @@ async function loadLocalAsset(scene, scene_name) {
     }
 }
 
-export { loadLocalAsset };
-
-function loadLocalAssetSync(scene, scene_name) {
+export default function loadLocalAssetSync(scene, scene_name) {
     let asset = SceneLoader.LoadAssetContainer(
         "",
         scene_name,

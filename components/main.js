@@ -1,13 +1,9 @@
-import * as GUI from "@babylonjs/gui";
+import { Slider, CreateFullscreenUI, StackPanel, CreateSimpleButton, Control } from "@babylonjs/gui";
 import { KeyboardEventTypes } from "@babylonjs/core/Events";
 import { prepareCamera } from "@components/prepareCamera";
-import {
-    xhrAll,
-    loadLocalAsset,
-    loadLocalAssetSync
-} from "@components/localLoaders";
+import { xhrAll, loadLocalAsset, loadLocalAssetSync } from "@components/localLoaders";
 
-async function main(engine, scene, scene_names) {
+export default async function main(engine, scene, scene_names) {
     let cameraChanged = true;
     let currentSceneIndex = 0;
     let isPlaying = false;
@@ -49,17 +45,17 @@ async function main(engine, scene, scene_names) {
     });
 
     // GUI generation
-    let advancedTexture = GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI");
-    let stackPanel = new GUI.StackPanel("stackPanel");
+    let advancedTexture = CreateFullscreenUI("UI");
+    let stackPanel = new StackPanel("stackPanel");
     stackPanel.isVertical = false;
     stackPanel.height = "100px";
     stackPanel.fontSize = "14px";
-    stackPanel.horizontalAlignment = GUI.Control.HORIZONTAL_ALIGNMENT_CENTER;
-    let stackOutside = new GUI.StackPanel("stackOutside");
-    stackOutside.verticalAlignment = GUI.Control.VERTICAL_ALIGNMENT_TOP;
+    stackPanel.horizontalAlignment = Control.HORIZONTAL_ALIGNMENT_CENTER;
+    let stackOutside = new StackPanel("stackOutside");
+    stackOutside.verticalAlignment = Control.VERTICAL_ALIGNMENT_TOP;
     stackOutside.addControl(stackPanel);
     advancedTexture.addControl(stackOutside);
-    let button = GUI.Button.CreateSimpleButton("Play", "Play");
+    let button = CreateSimpleButton("Play", "Play");
     button.width = "50px";
     button.height = "25px";
     button.color = "white";
@@ -79,7 +75,7 @@ async function main(engine, scene, scene_names) {
         }
     });
     stackPanel.addControl(button);
-    let slider = new GUI.Slider("FrameSlider");
+    let slider = new Slider("FrameSlider");
     slider.value = currentSceneIndex;
     slider.minimum = 0;
     slider.maximum = scene_names.length - 1;

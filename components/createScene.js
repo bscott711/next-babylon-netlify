@@ -6,7 +6,7 @@ import { main } from "@components/main";
 const canvas = document.getElementById("renderCanvas");
 const engine = new Engine(canvas, true);
 
-function createScene(
+export default function createScene(
     scenes_root = "https://cdn.glitch.me/",
     startNum = 1,
     numFiles = 100,
@@ -23,4 +23,4 @@ function createScene(
     return scene;
 }
 
-export default { createScene };
+export { createScene };
