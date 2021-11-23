@@ -1,8 +1,10 @@
-import React, { useRef, useState } from 'react'
-import { Engine, Scene, useBeforeRender, useClick, useHover } from 'react-babylonjs'
-import { Vector3, Color3 } from '@babylonjs/core'
-import '@styles/globals.css'
-
+import React, { useRef, useState } from 'react';
+import { Engine, Scene, useBeforeRender, useClick, useHover } from 'react-babylonjs';
+import { Vector3, Color3 } from '@babylonjs/core';
+import '@styles/globals.css';
+import Head from 'next/head'
+import Header from '@components/Header'
+import Footer from '@components/Footer'
 
 const DefaultScale = new Vector3(1, 1, 1);
 const BiggerScale = new Vector3(1.25, 1.25, 1.25);
@@ -42,6 +44,12 @@ const SpinningBox = (props) => {
 export default function App() {
     return (
         <div>
+            <Head>
+                <title>The all new BabylonJS-Viewer!</title>
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
+            <main>
+                <Header title="Welcome to the future of interactive data!" />
             <Engine antialias adaptToDeviceRatio canvasId='renderCanvas'>
                 <Scene>
                     <arcRotateCamera name="camera1" target={Vector3.Zero()} alpha={Math.PI / 2} beta={Math.PI / 4} radius={8} />
@@ -54,8 +62,8 @@ export default function App() {
                     />
                 </Scene>
             </Engine>
+            </main>
+            <Footer />
         </div>
     );
 }
-
-export { App }
