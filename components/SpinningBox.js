@@ -2,11 +2,10 @@ import React, { useRef, useState } from 'react'
 import { useBeforeRender, useClick, useHover } from 'react-babylonjs'
 import { Vector3, Color3 } from '@babylonjs/core'
 
-const DefaultScale = new Vector3(1, 1, 1);
-const BiggerScale = new Vector3(1.25, 1.25, 1.25);
-
 const SpinningBox = (props) => {
     // access Babylon scene objects with same React hook as regular DOM elements
+    const DefaultScale = new Vector3(1, 1, 1);
+    const BiggerScale = new Vector3(1.25, 1.25, 1.25);
     const boxRef = useRef(null);
 
     const [clicked, setClicked] = useState(false);
