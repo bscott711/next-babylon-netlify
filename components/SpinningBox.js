@@ -35,5 +35,3 @@ export default function SpinningBox(props) {
         <standardMaterial name={`${props.name}-mat`} diffuseColor={hovered ? props.hoveredColor : props.color} specularColor={Color3.Black()} />
     </box>);
 }
-
-//export { SpinningBox }
