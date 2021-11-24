@@ -1,13 +1,8 @@
-// import { Engine, Scene } from 'react-babylonjs';
-// import { Vector3, Color3 } from '@babylonjs/core';
-// import SpinningBox from '@components/SpinningBox';
-
-import SpinningBoxScene from '@components/SpinningBoxScene';
 import '@styles/globals.css';
 import Head from 'next/head';
 import Header from '@components/Header';
 import Footer from '@components/Footer';
-
+import SpinningBoxScene from '@scenes/SpinningBoxScene:';
 
 export default function App() {
     return (
