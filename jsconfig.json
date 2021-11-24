@@ -2,12 +2,15 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "@components/*": ["components/*"],
-      "@scenes/*:": ["scenes/*"],
-      "@styles/*": ["styles/*"]
+      "@components/*": [
+        "components/*"
+      ],
+      "@styles/*": [
+        "styles/*"
+      ],
+      "@scenes/*:": [
+        "scenes/*"
+      ],
     }
-  },
-  "exclude": [
-    "node_modules"
-  ]
+  }
 }

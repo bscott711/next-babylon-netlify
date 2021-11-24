@@ -1,21 +1,7 @@
-import '@styles/globals.css';
-import Head from 'next/head';
-import Header from '@components/Header';
-import Footer from '@components/Footer';
-import SpinningBoxScene from '@scenes/SpinningBoxScene:';
+import '@styles/globals.css'
 
-export default function App() {
+export default function Application({ Component, pageProps }) {
     return (
-        <div>
-            <Head>
-                <title>The all new BabylonJS-Viewer!</title>
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
-            <main>
-                <Header title="Welcome to the future of interactive data!" />
-                <SpinningBoxScene />
-            </main>
-            <Footer />
-        </div>
-    );
+        <Component {...pageProps} />
+    )
 }
