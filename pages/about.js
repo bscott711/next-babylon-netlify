@@ -1,16 +1,9 @@
-import Head from 'next/head';
-import Header from '@components/Header';
-import Footer from '@components/Footer';
+import Layout from '@components/layout';
+
 export default function About() {
     return (
-        <div>
-            <Head>
-                <title>This is an about!</title>
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
-            <Header />
+        <Layout title={'This is an about'}>
             <strong>it's ya boi </strong>
-            <Footer />
-        </div>
+        </Layout>
     )
 }
