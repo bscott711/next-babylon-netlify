@@ -1,6 +1,6 @@
-import Link from 'next/link'
 import Head from 'next/head'
-import Footer from '@components/Footer';
+import Footer from '@components/Footer'
+import NavBar from '@components/NavBar'
 
 export default function Layout({
     children,
@@ -14,21 +14,9 @@ export default function Layout({
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-
-            <header>
-                <nav>
-                    <Link href="/">
-                        <a>Home</a>
-                    </Link>{' '}
-                    |
-                    <Link href="/about">
-                        <a>About</a>
-                    </Link>{' '}
-                </nav>
-            </header>
+            <NavBar />
             <main>
                 {children}
-
             </main>
             <Footer />
         </div>
