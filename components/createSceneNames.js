@@ -1,4 +1,3 @@
-
 export default function createSceneNames(
     scenesRoot = "https://cdn.glitch.me/",
     startNum = 1,
