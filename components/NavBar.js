@@ -7,7 +7,7 @@ export default function NavBar() {
                 <Link href="/">
                     <button>Home</button>
                 </Link>
-                <Link href="/example">
+                <Link href="/changefocus">
                     <button>BrianZinn Ex.</button>
                 </Link>
             </nav>
