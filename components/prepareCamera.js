@@ -30,4 +30,4 @@ export default async function PrepareCamera(scene) {
     return camera;
 }
 
-export {PrepareCamera}
+export { PrepareCamera }

@@ -8,11 +8,6 @@ export default async function BJSViewer(e) {
     engine.displayLoadingUI();
     var sceneNames = await CreateSceneName();
     var camera = new FreeCamera("camera1", new Vector3(0, 0.3, -0.7), scene);
-    camera.speed = 0.01;
-    camera.minZ = 0.001;
-    scene.activeCameras.push(camera);
-    camera.attachControl(canvas, true);
-
     Main(engine, scene, sceneNames)
 }
 
