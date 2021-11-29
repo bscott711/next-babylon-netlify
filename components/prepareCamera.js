@@ -1,5 +1,5 @@
-import { Color3, CubeTexture } from "@babylonjs/core";
-import { HemisphericLight } from "@babylonjs/core/Lights/hemisphericLight";
+import { Color3, CubeTexture } from '@babylonjs/core';
+import { HemisphericLight } from '@babylonjs/core/Lights/hemisphericLight';
 
 export default async function PrepareCamera(scene) {
     scene.createDefaultCamera(true, true);

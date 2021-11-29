@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import { useBeforeRender, useClick, useHover } from 'react-babylonjs'
 import { Vector3, Color3 } from '@babylonjs/core'
 
@@ -28,8 +28,8 @@ export default function SpinningBox(props) {
     useBeforeRender((scene) => {
         if (boxRef.current) {
             // Delta time smoothes the animation.
-            const  deltaTimeInMillis = scene.getEngine().getDeltaTime();
-            boxRef.current.rotation.y += (((clockwiseRef.current ? rpm: -rpm) / 60) * Math.PI * 2 * (deltaTimeInMillis / 1000));
+            const deltaTimeInMillis = scene.getEngine().getDeltaTime();
+            boxRef.current.rotation.y += (((clockwiseRef.current ? rpm : -rpm) / 60) * Math.PI * 2 * (deltaTimeInMillis / 1000));
         }
     });
 

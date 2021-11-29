@@ -1,6 +1,6 @@
-import "@babylonjs/loaders/glTF";
-import { GLTFLoader } from "@babylonjs/loaders/glTF/2.0/glTFLoader";
-import { SceneLoader, Axis, Space } from "@babylonjs/core";
+import '@babylonjs/loaders/glTF';
+import { GLTFLoader } from '@babylonjs/loaders/glTF/2.0/glTFLoader';
+import { SceneLoader, Axis, Space } from '@babylonjs/core';
 
 export async function xhrAll(url) {
     let xhr = new XMLHttpRequest();

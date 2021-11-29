@@ -1,6 +1,6 @@
 import { Engine } from '@babylonjs/core/Engines/engine';
 import { Scene } from '@babylonjs/core/scene';
-import { Main } from "@components/main";
+import { Main } from '@components/main';
 
 // Get the canvas element from the DOM.
 const canvas = document.getElementById("renderCanvas");
