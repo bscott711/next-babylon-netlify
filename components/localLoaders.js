@@ -1,5 +1,5 @@
 import "@babylonjs/loaders/glTF";
-//import { GLTFLoader } from "@babylonjs/loaders/glTF/2.0/glTFLoader";
+import { GLTFLoader } from "@babylonjs/loaders/glTF/2.0/glTFLoader";
 import { SceneLoader, Axis, Space } from "@babylonjs/core";
 
 export async function xhrAll(url) {
@@ -19,13 +19,9 @@ export async function xhrAll(url) {
     };
 }
 
-export async function loadLocalAsset(scene, scene_name) {
+export async function loadLocalAsset(scene, sceneName) {
     let old = scene.getNodeByName("__root__");
-    let asset = await SceneLoader.LoadAssetContainerAsync(
-        "",
-        scene_name,
-        scene
-    ).then(container => {
+    let asset = await SceneLoader.LoadAssetContainerAsync(sceneName).then(container => {
         let rootMesh = container.meshes[0];
         rootMesh.rotationQuaternion = null;
         rootMesh.rotate(Axis.X, Math.PI / 2, Space.LOCAL);
@@ -47,8 +43,8 @@ export async function loadLocalAsset(scene, scene_name) {
 
 export default function loadLocalAssetSync(scene, scene_name) {
     let asset = SceneLoader.LoadAssetContainer(
-        "",
         scene_name,
+        "",
         scene,
         function (container) {
             let rootMesh = container.meshes[0];

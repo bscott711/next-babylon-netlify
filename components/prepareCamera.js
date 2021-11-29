@@ -29,3 +29,5 @@ export default async function PrepareCamera(scene) {
     helper.setMainColor(Color3.Gray());
     return camera;
 }
+
+export {PrepareCamera}

@@ -1,14 +1,14 @@
-import { Slider, CreateFullscreenUI, StackPanel, CreateSimpleButton, Control } from "@babylonjs/gui";
+import { Slider, AdvancedDynamicTexture, Button, StackPanel, Control } from "@babylonjs/gui";
 import { KeyboardEventTypes } from "@babylonjs/core/Events";
-import { prepareCamera } from "@components/prepareCamera";
+import { PrepareCamera } from "@components/prepareCamera";
 import { xhrAll, loadLocalAsset, loadLocalAssetSync } from "@components/localLoaders";
 
-export default async function Main(scene, sceneNames) {
+export default async function Main(engine,scene, sceneNames) {
     let cameraChanged = true;
     let currentSceneIndex = 0;
     let isPlaying = false;
     await loadLocalAsset(scene, sceneNames[currentSceneIndex]);
-    let camera = await prepareCamera(scene);
+    let camera = await PrepareCamera(scene);
     scene.render(true, true);
     engine.hideLoadingUI();
     await sceneNames.map(file => xhrAll(file));
@@ -45,7 +45,7 @@ export default async function Main(scene, sceneNames) {
     });
 
     // GUI generation
-    let advancedTexture = CreateFullscreenUI("UI");
+    let advancedTexture = AdvancedDynamicTexture.CreateFullscreenUI("UI");
     let stackPanel = new StackPanel("stackPanel");
     stackPanel.isVertical = false;
     stackPanel.height = "100px";
@@ -55,7 +55,7 @@ export default async function Main(scene, sceneNames) {
     stackOutside.verticalAlignment = Control.VERTICAL_ALIGNMENT_TOP;
     stackOutside.addControl(stackPanel);
     advancedTexture.addControl(stackOutside);
-    let button = CreateSimpleButton("Play", "Play");
+    let button = Button.CreateSimpleButton("Play", "Play");
     button.width = "50px";
     button.height = "25px";
     button.color = "white";
@@ -129,3 +129,5 @@ export default async function Main(scene, sceneNames) {
     });
     return camera
 }
+
+export { Main }
