@@ -1,5 +1,5 @@
 import { Engine } from 'react-babylonjs';
-import NonDeclarative from '@components/nonDeclarative'
+import NonDeclarative from '@components/nonDeclarative';
 
 export default function NonDeclarativeScene() {
     return (
