@@ -1,5 +1,5 @@
 import "@babylonjs/loaders/glTF";
-import { GLTFLoader } from "@babylonjs/loaders/glTF/2.0/glTFLoader";
+//import { GLTFLoader } from "@babylonjs/loaders/glTF/2.0/glTFLoader";
 import { SceneLoader, Axis, Space } from "@babylonjs/core";
 
 export async function xhrAll(url) {

@@ -1,9 +1,9 @@
 import { Color3, CubeTexture } from "@babylonjs/core";
 import { HemisphericLight } from "@babylonjs/core/Lights/hemisphericLight";
 
-export default async function prepareCamera(scene) {
+export default async function PrepareCamera(scene) {
     scene.createDefaultCamera(true, true);
-    const camera = scene.activeCamera;
+    let camera = scene.activeCamera;
     camera.name = "arcCam";
     camera.alpha = 3;
     camera.beta = 1;
@@ -25,9 +25,7 @@ export default async function prepareCamera(scene) {
     let light = new HemisphericLight("hemi", (0, 1, 0), scene);
     scene.lights.push(light);
     let helper = scene.createDefaultEnvironment();
-    scene.environmentTexture = new CubeTexture("/studio.env", scene);
+    scene.environmentTexture = new CubeTexture("/textures/studio.env", scene);
     helper.setMainColor(Color3.Gray());
     return camera;
 }
-
-export { prepareCamera };

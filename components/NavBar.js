@@ -7,8 +7,11 @@ export default function NavBar() {
                 <Link href="/">
                     <button>Home</button>
                 </Link>
+                <Link href="/babylonviewer">
+                    <button>Babylon Viewer</button>
+                </Link>
                 <Link href="/changefocus">
-                    <button>BrianZinn Ex.</button>
+                    <button>Changing Focus</button>
                 </Link>
             </nav>
         </header>

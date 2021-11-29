@@ -3,15 +3,15 @@ import { KeyboardEventTypes } from "@babylonjs/core/Events";
 import { prepareCamera } from "@components/prepareCamera";
 import { xhrAll, loadLocalAsset, loadLocalAssetSync } from "@components/localLoaders";
 
-export default async function main(engine, scene, scene_names) {
+export default async function Main(scene, sceneNames) {
     let cameraChanged = true;
     let currentSceneIndex = 0;
     let isPlaying = false;
-    await loadLocalAsset(scene, scene_names[currentSceneIndex]);
-    const camera = await prepareCamera(scene);
+    await loadLocalAsset(scene, sceneNames[currentSceneIndex]);
+    var camera = await prepareCamera(scene);
     scene.render(true, true);
     engine.hideLoadingUI();
-    await scene_names.map(file => xhrAll(file));
+    await sceneNames.map(file => xhrAll(file));
     scene.render(true, true);
 
     //RENDER LOOP
@@ -65,7 +65,7 @@ export default async function main(engine, scene, scene_names) {
         if (isPlaying) {
             button.textBlock.text = "Pause";
             slider.handle = setInterval(() => {
-                currentSceneIndex = ++currentSceneIndex % scene_names.length;
+                currentSceneIndex = ++currentSceneIndex % sceneNames.length;
                 slider.value = currentSceneIndex;
             }, 83);
         } else {
@@ -78,14 +78,14 @@ export default async function main(engine, scene, scene_names) {
     let slider = new Slider("FrameSlider");
     slider.value = currentSceneIndex;
     slider.minimum = 0;
-    slider.maximum = scene_names.length - 1;
+    slider.maximum = sceneNames.length - 1;
     slider.step = 1;
     slider.isThumbCircle = true;
     slider.isThumbClamped = true;
     slider.height = "20px";
     slider.width = "200px";
     slider.onValueChangedObservable.add(value => {
-        loadLocalAssetSync(scene, scene_names[value]);
+        loadLocalAssetSync(scene, sceneNames[value]);
         currentSceneIndex = value;
     });
     slider.onPointerDownObservable.add(() => {
@@ -110,7 +110,7 @@ export default async function main(engine, scene, scene_names) {
                         }
                         --currentSceneIndex;
                         if (currentSceneIndex < 0) {
-                            currentSceneIndex = scene_names.length - 1;
+                            currentSceneIndex = sceneNames.length - 1;
                         }
                         slider.value = currentSceneIndex;
                         break;
@@ -120,13 +120,12 @@ export default async function main(engine, scene, scene_names) {
                             button.textBlock.text = "Play";
                             isPlaying = !isPlaying;
                         }
-                        currentSceneIndex = ++currentSceneIndex % scene_names.length;
+                        currentSceneIndex = ++currentSceneIndex % sceneNames.length;
                         slider.value = currentSceneIndex;
                         break;
                 }
                 break;
         }
     });
+    return camera
 }
-
-export { main };
