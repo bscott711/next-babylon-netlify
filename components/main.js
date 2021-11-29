@@ -3,7 +3,7 @@ import { KeyboardEventTypes } from "@babylonjs/core/Events";
 import { PrepareCamera } from "@components/prepareCamera";
 import { xhrAll, loadLocalAsset, loadLocalAssetSync } from "@components/localLoaders";
 
-export default async function Main(engine,scene, sceneNames) {
+export default async function Main(engine, scene, sceneNames) {
     let cameraChanged = true;
     let currentSceneIndex = 0;
     let isPlaying = false;
