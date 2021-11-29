@@ -1,6 +1,6 @@
 {
   "name": "babylonjs-viewer",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "private": true,
   "author": "Brandon Scott",
   "license": "Apache-2.0",
@@ -8,6 +8,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next build && next start",
+    "lint": "next lint",
     "export": "next export"
   },
   "dependencies": {
@@ -22,6 +23,9 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@netlify/plugin-nextjs": "^4.0.0-beta.7"
+    "@netlify/plugin-nextjs": "^4.0.0-beta.7",
+    "eslint": "^7.32.0",
+    "eslint-config-next": "12.0.4",
+    "eslint-plugin-next": "latest"
   }
 }

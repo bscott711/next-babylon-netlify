@@ -23,4 +23,4 @@ export default function CreateScene(
     return scene;
 }
 
-export { createScene };
+export { CreateScene };
