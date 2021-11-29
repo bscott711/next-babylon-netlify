@@ -8,7 +8,7 @@ export default async function Main(scene, sceneNames) {
     let currentSceneIndex = 0;
     let isPlaying = false;
     await loadLocalAsset(scene, sceneNames[currentSceneIndex]);
-    var camera = await prepareCamera(scene);
+    let camera = await prepareCamera(scene);
     scene.render(true, true);
     engine.hideLoadingUI();
     await sceneNames.map(file => xhrAll(file));
