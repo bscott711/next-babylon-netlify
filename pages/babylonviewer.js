@@ -6,9 +6,7 @@ export default function BabylonViewer() {
     return (
         <Layout title={'Babylon-Viewer'}>
             <strong>Interactive Isosurface Viewer</strong>
-            <Engine antialias adaptToDeviceRatio canvasId='renderCanvas'>
-                <BJSViewer />
-            </Engine>
+            <BJSViewer canvasId={'renderCanvas'} startNum={10} numFiles={50}/>
         </Layout>
     )
 }

@@ -32,18 +32,6 @@ export default async function Main(engine, scene, sceneNames) {
         cameraChanged = true;
     });
 
-    // Resize window
-    window.addEventListener("resize", async function () {
-        engine.resize();
-        scene.render(true, true)
-    });
-
-    // Resize engine
-    engine.onResizeObservable.add(() => {
-        engine.resize();
-        scene.render(true, true);
-    });
-
     // GUI generation
     let advancedTexture = AdvancedDynamicTexture.CreateFullscreenUI("UI");
     let stackPanel = new StackPanel("stackPanel");

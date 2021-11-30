@@ -1,7 +1,7 @@
 import { Color3, FreeCamera, Vector3, ArcRotateCamera, DefaultRenderingPipeline, HemisphericLight, DepthOfFieldEffectBlurLevel, PBRMetallicRoughnessMaterial, CubeTexture, Mesh } from '@babylonjs/core';
 import { Control, TextBlock, Slider, StackPanel, AdvancedDynamicTexture } from '@babylonjs/gui'
 import { Component } from 'react';
-import { Scene } from 'react-babylonjs';
+import { Engine, Scene } from 'react-babylonjs';
 
 export default class NonDeclarative extends Component {
     onSceneMount(e) {
@@ -112,8 +112,9 @@ export default class NonDeclarative extends Component {
 
     render() {
         return (
-            <Scene
-                onSceneMount={this.onSceneMount}
-            />)
+            <Engine antialias adaptToDeviceRatio canvasId={this.props.canvasId}>
+                <Scene onSceneMount={this.onSceneMount} />
+            </Engine>
+        )
     }
 }

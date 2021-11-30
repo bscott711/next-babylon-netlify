@@ -7,7 +7,7 @@ export default function Home() {
     return (
         <Layout title={'Those boxes are spinning'}>
             <strong>Spinning Boxes!</strong>
-            <Engine antialias adaptToDeviceRatio canvasId='renderCanvas'>
+            <Engine antialias adaptToDeviceRatio canvasId={'renderCanvas'}>
                 <Scene>
                     <arcRotateCamera name="camera1" target={Vector3.Zero()} alpha={Math.PI / 2} beta={Math.PI / 4} radius={8} />
                     <hemisphericLight name='light1' intensity={0.75} direction={Vector3.Up()} />
