@@ -1,6 +1,5 @@
 html,
 body {
-  overflow: hidden;
   height: 100%;
   position: relative;
   padding: 0;
@@ -67,8 +66,8 @@ button:hover {
 }
 
 #renderCanvas {
-  width: 75%;
-  height: 75%;
+  width: 90%;
+  height: 90%;
   touch-action: none;
   outline: #9a9a9a;
 }

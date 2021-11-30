@@ -6,11 +6,11 @@ import { Scene } from 'react-babylonjs';
 
 export default class BJSViewer extends Component {
     onSceneMount(e) {
-        const { scene, canvas } = e
-        var engine = scene.getEngine();
+        const { scene } = e
+        const engine = scene.getEngine();
         engine.displayLoadingUI();
         var sceneNames = CreateSceneName();
-        new ArcRotateCamera("RequiredCam", new Vector3(0, 0.3, -0.7), scene);
+        new ArcRotateCamera("RequiredCam", new Vector3.Up(), scene);
         Main(engine, scene, sceneNames);
     }
 
