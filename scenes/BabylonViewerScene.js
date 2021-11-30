@@ -4,7 +4,7 @@ import BJSViewer from '@components/BJSViewer';
 export default function BabylonViewerScene() {
     return (
         <Engine antialias adaptToDeviceRatio canvasId='renderCanvas'>
-            <Scene onSceneMount={BJSViewer}/>
+            <BJSViewer />
         </Engine>
     )
 }

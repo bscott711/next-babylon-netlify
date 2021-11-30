@@ -21,6 +21,7 @@ export default async function PrepareCamera(scene) {
     helperCam.wheelDeltaPercentage = 0.01;
     helperCam.pinchDeltaPercentage = 0.01;
     helperCam.attachControl(true, true);
+    helperCam.panningSensibility = 6.5;
     let light = new HemisphericLight("hemi", (0, 1, 0), scene);
     scene.lights.push(light);
     let helper = scene.createDefaultEnvironment();
