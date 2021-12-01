@@ -1,8 +1,9 @@
+import { Component } from 'react';
+import { Engine, Scene } from 'react-babylonjs';
 import { ArcRotateCamera, Vector3 } from '@babylonjs/core';
 import { CreateSceneName } from '@components/createSceneName';
 import { Main } from '@components/main';
-import { Component } from 'react';
-import { Engine, Scene } from 'react-babylonjs';
+
 
 export default class Viewer extends Component {
 

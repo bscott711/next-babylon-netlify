@@ -9,3 +9,5 @@ export default function BabylonViewer() {
         </Layout>
     )
 }
+
+export { BabylonViewer }

@@ -5,3 +5,5 @@ export default function Application({ Component, pageProps }) {
         <Component {...pageProps} />
     )
 }
+
+export { Application }

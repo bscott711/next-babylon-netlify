@@ -1,5 +1,4 @@
 import '@babylonjs/loaders/glTF';
-import { GLTFLoader } from '@babylonjs/loaders/glTF/2.0/glTFLoader';
 import { SceneLoader, Axis, Space } from '@babylonjs/core';
 
 export async function xhrAll(url) {
@@ -13,7 +12,7 @@ export async function xhrAll(url) {
     xhr.send();
     xhr.onload = function () {
         if (xhr.status !== 200) {
-            //alert ('Error:' + xhr.status);
+            console.log('Error:' + xhr.status);
             return;
         }
     };
