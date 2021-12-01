@@ -10,8 +10,8 @@ export default function NavBar() {
                 <Link href="/babylonviewer" passHref>
                     <button>Babylon Viewer</button>
                 </Link>
-                <Link href="/bjsviewer" passHref>
-                    <button>Orig Viewer</button>
+                <Link href="/changefocus" passHref>
+                    <button>Changing Focus</button>
                 </Link>
             </nav>
         </header>
