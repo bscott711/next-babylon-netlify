@@ -1,6 +1,6 @@
-# IIBR
+# Next-Babylon-Netlify
 
-## Interactive isosurfaces using babylonjs rendering
+## Interactive isosurfaces using babylonjs rendering deployed to netlify
 
 This package provides a utility to add an interactive rendering environment to static HTML pages.
 
