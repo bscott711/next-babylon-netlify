@@ -18,5 +18,3 @@ This package provides a utility to add an interactive rendering environment to s
     git lfs track "*.glb"
     git add .gitattributes
 
-Adding files to the lfs results in the following URL for files.
-[Timepoint 1](https://github.com/bscott711/IIBR/blob/main/assets/bcell/bcell_1.glb)
