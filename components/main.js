@@ -18,8 +18,8 @@ export default async function Main(engine, scene, sceneNames) {
     var renderLoop = function () {
         camera.update();
         if (cameraChanged) {
-            cameraChanged = !cameraChanged;
             scene.executeWhenReady(() => cameraChanged = true);
+            cameraChanged = !cameraChanged;
             scene.render(true, true);
         }
     };
