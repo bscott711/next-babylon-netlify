@@ -7,10 +7,10 @@ export default function NavBar() {
             <div className={styles.dropdown}>
                 <button className={styles.dropbtn}>Pages</button>
                 <div className={styles.dropdown_content}>
-                    <Link href="/" passHref>Home</Link>
-                    <Link href="/babylonviewer" passHref>Babylon Viewer </Link>
-                    <Link href="/changefocus" passHref> Change Focus </Link>
-                    <Link href="/box" passHref> Babylon-Hook </Link>
+                    <Link href="/" passHref>One spinning box</Link>
+                    <Link href="/boxes" passHref>Twwwoo spinning boxes</Link>
+                    <Link href="/changefocus" passHref>Change Focus</Link>
+                    <Link href="/babylonviewer" passHref>Babylon Viewer</Link>
                 </div>
             </div>
         </div>

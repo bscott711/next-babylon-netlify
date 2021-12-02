@@ -1,7 +1,6 @@
-export default function CreateSceneName(props) {
-    let { scenesRoot, startNum, numFiles, filePrefix } = props;
-    let numArray = Array.from(new Array(numFiles), (_x, i) => i + startNum);
-    let sceneNames = numArray.map(x => scenesRoot + filePrefix + x + ".glb");
+export default function CreateSceneName(e) {
+    let numArray = Array.from(new Array(e.numfiles), (_x, i) => i + e.startnum);
+    let sceneNames = numArray.map(x => e.root + e.prefix + x + ".glb");
     return sceneNames
 };
 

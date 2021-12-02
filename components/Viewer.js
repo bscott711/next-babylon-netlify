@@ -1,32 +1,29 @@
 import { Component } from 'react';
-import { Engine, Scene } from 'react-babylonjs';
+import SceneComponent from 'babylonjs-hook';
 import { ArcRotateCamera, Vector3 } from '@babylonjs/core';
 import { CreateSceneName } from '@components/createSceneName';
 import { Main } from '@components/main';
 
 
 export default class Viewer extends Component {
-
-    onSceneMount(e) {
-        const { scene } = e;
+    onSceneReady(scene) {
         const engine = scene.getEngine();
-        const sceneNames = CreateSceneName(this);
         engine.displayLoadingUI();
         new ArcRotateCamera("RequiredCam", new Vector3.Up(), scene);
+        const sceneNames = CreateSceneName(this);
         Main(engine, scene, sceneNames);
     }
 
     render() {
         return (
-            <Engine antialias adaptToDeviceRatio canvasId={this.props.canvasId}>
-                <Scene onSceneMount={this.onSceneMount} scenesRoot={this.props.scenesRoot} startNum={this.props.startNum} numFiles={this.props.numFiles} filePrefix={this.props.filePrefix} />
-            </Engine>)
+            <SceneComponent antialias adaptToDeviceRatio id={this.props.canvasId} onSceneReady={this.onSceneReady} root={this.props.root} startnum={this.props.startnum} numfiles={this.props.numfiles} prefix={this.props.prefix} />
+        )
     }
 }
 
 Viewer.defaultProps = {
-    scenesRoot: "https://cdn.glitch.me/",
-    startNum: 1,
-    numFiles: 100,
-    filePrefix: "7ce5375e-6fda-4d57-96e1-a13cdcbc8894%2Fbcell_"
+    root: "https://cdn.glitch.me/",
+    startnum: 1,
+    numfiles: 100,
+    prefix: "7ce5375e-6fda-4d57-96e1-a13cdcbc8894%2Fbcell_"
 }
