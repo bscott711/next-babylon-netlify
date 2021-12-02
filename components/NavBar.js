@@ -10,6 +10,7 @@ export default function NavBar() {
                     <Link href="/" passHref>Home</Link>
                     <Link href="/babylonviewer" passHref>Babylon Viewer </Link>
                     <Link href="/changefocus" passHref> Change Focus </Link>
+                    <Link href="/box" passHref> Babylon-Hook </Link>
                 </div>
             </div>
         </div>
