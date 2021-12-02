@@ -1,20 +1,18 @@
 import Link from 'next/link';
+import styles from '@styles/navbar.module.css'
 
 export default function NavBar() {
     return (
-        <header>
-            <nav>
-                <Link href="/" passHref>
-                    <button>Home</button>
-                </Link>
-                <Link href="/babylonviewer" passHref>
-                    <button>Babylon Viewer</button>
-                </Link>
-                <Link href="/changefocus" passHref>
-                    <button>Changing Focus</button>
-                </Link>
-            </nav>
-        </header>
+        <div className={styles.navbar}>
+            <div className={styles.dropdown}>
+                <button className={styles.dropbtn}>Pages</button>
+                <div className={styles.dropdown_content}>
+                    <Link href="/" passHref>Home</Link>
+                    <Link href="/babylonviewer" passHref>Babylon Viewer </Link>
+                    <Link href="/changefocus" passHref> Change Focus </Link>
+                </div>
+            </div>
+        </div>
     )
 }
 
