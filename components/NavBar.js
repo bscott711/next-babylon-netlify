@@ -11,6 +11,7 @@ export default function NavBar() {
                     <Link href="/boxes" passHref>Twwwoo spinning boxes</Link>
                     <Link href="/changefocus" passHref>Change Focus</Link>
                     <Link href="/babylonviewer" passHref>Babylon Viewer</Link>
+                    <Link href="/localviewer" passHref>Asset Viewer</Link>
                 </div>
             </div>
         </div>
