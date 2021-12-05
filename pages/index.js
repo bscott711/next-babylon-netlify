@@ -1,13 +1,13 @@
 import Layout from '@components/layout';
-import App from '@components/babylonHooks';
+import Viewer from '@components/Viewer';
 
-export default function Box() {
+export default function LocalViewer() {
     return (
-        <Layout title={'One box is spinning'}>
-            <strong>Example from the babylonjs-hook github repo</strong>
-            <App canvasId={'renderCanvas'} />
+        <Layout title={'Babylon-Viewer'}>
+            <strong>Interactive Isosurface Viewer</strong>
+            <Viewer canvasId={'renderCanvas'} root={'assets/sRBC_Ex0/'} prefix={'surface_'} numfiles={150} />
         </Layout>
     )
 }
 
-export { Box }
+export { LocalViewer }
