@@ -4,33 +4,12 @@ import { PrepareCamera } from '@components/prepareCamera';
 import { xhrAll, loadLocalAsset, loadLocalAssetSync } from '@components/localLoaders';
 
 export default async function Main(engine, scene, sceneNames) {
-    let cameraChanged = true;
     let currentSceneIndex = 0;
     let isPlaying = false;
     await loadLocalAsset(scene, sceneNames[currentSceneIndex]);
     let camera = await PrepareCamera(scene);
-    scene.render(true, true);
     engine.hideLoadingUI();
     await sceneNames.map(file => xhrAll(file));
-    scene.render(true, true);
-
-    //RENDER LOOP
-    var renderLoop = function () {
-        camera.update();
-        if (cameraChanged) {
-            scene.executeWhenReady(() => cameraChanged = true);
-            cameraChanged = !cameraChanged;
-            scene.render(true, true);
-        }
-    };
-
-    //This is required for the scene to be generate outside of the BJS-PG
-    engine.runRenderLoop(renderLoop);
-
-    // Camera position
-    camera.onViewMatrixChangedObservable.add(() => {
-        cameraChanged = true;
-    });
 
     // GUI generation
     let advancedTexture = AdvancedDynamicTexture.CreateFullscreenUI("UI");
@@ -59,7 +38,6 @@ export default async function Main(engine, scene, sceneNames) {
         } else {
             button.textBlock.text = "Play";
             clearInterval(slider.handle);
-            scene.render(true, true);
         }
     });
     stackPanel.addControl(button);

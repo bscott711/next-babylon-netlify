@@ -1,5 +1,5 @@
 import Layout from '@components/layout';
-import App from '@components/babylonHooks';
+import App from 'demo_components/babylonHooks';
 
 export default function Box() {
     return (
