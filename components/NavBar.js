@@ -18,6 +18,16 @@ export default function NavBar() {
                     <Link href="/localviewer" passHref>Surface colored as motion</Link>
                 </div>
             </div>
+            <div className={styles.dropdown}>
+                <button className={styles.dropbtn}>dHL60 Motion</button>
+                <div className={styles.dropdown_content}>
+                    <Link href="/dhl60_day2" passHref>Day 2 </Link>
+                    <Link href="/dhl60_day3" passHref>Day 3 </Link>
+                    <Link href="/dhl60_day4" passHref>Day 4 </Link>
+                    <Link href="/dhl60_day5" passHref>Day 5 </Link>
+                    <Link href="/dhl60_day6" passHref>Day 6 </Link>
+                </div>
+            </div>
         </div>
     )
 }
