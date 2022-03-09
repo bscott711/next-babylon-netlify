@@ -13,6 +13,14 @@ export default function NavBar() {
                 </div>
             </div>
             <div className={styles.dropdown}>
+                <button className={styles.dropbtn}>mRBC Examples</button>
+                <div className={styles.dropdown_content}>
+                    <Link href="/mrbc1" passHref>mRBC Smooth</Link>
+                    <Link href="/mrbc2" passHref>mRBC 2 </Link>
+                    <Link href="/mrbc_Miap" passHref>mRBC Miap</Link>
+                </div>
+            </div>
+            <div className={styles.dropdown}>
                 <button className={styles.dropbtn}>Bcell Example</button>
                 <div className={styles.dropdown_content}>
                     <Link href="/localviewer" passHref>Surface colored as motion</Link>
