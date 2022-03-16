@@ -36,6 +36,12 @@ export default function NavBar() {
                     <Link href="/dhl60_day6" passHref>Day 6 </Link>
                 </div>
             </div>
+            <div className={styles.dropdown}>
+                <button className={styles.dropbtn}>CSF1 Stimulation</button>
+                <div className={styles.dropdown_content}>
+                    <Link href="/csf_stim" passHref>Surface colored as AktPH</Link>
+                </div>
+            </div>
         </div>
     )
 }
