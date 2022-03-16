@@ -37,9 +37,10 @@ export default function NavBar() {
                 </div>
             </div>
             <div className={styles.dropdown}>
-                <button className={styles.dropbtn}>CSF1 Stimulation</button>
+                <button className={styles.dropbtn}>AktPH Surface Int</button>
                 <div className={styles.dropdown_content}>
-                    <Link href="/csf_stim" passHref>Surface colored as AktPH</Link>
+                    <Link href="/csf_starve" passHref>CSF-1 Starved</Link>
+                    <Link href="/csf_stim" passHref>CSF-1 Stimulation</Link>
                 </div>
             </div>
         </div>
