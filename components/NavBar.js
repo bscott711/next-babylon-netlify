@@ -24,6 +24,7 @@ export default function NavBar() {
                 <button className={styles.dropbtn}>Bcell Example</button>
                 <div className={styles.dropdown_content}>
                     <Link href="/localviewer" passHref>Surface colored as motion</Link>
+                    <Link href="/eat_d3HL60" passHref> Eat d3HL60</Link>
                 </div>
             </div>
             <div className={styles.dropdown}>
