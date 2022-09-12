@@ -11,7 +11,7 @@ export default class Viewer extends Component {
         engine.displayLoadingUI();
         new ArcRotateCamera("RequiredCam", new Vector3(0, 1, 0), scene);
         const sceneNames = CreateSceneName(this);
-        console.log(sceneNames)
+        //console.log(sceneNames)
         Main(engine, scene, sceneNames);
     }
 
