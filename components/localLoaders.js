@@ -1,5 +1,15 @@
 import '@babylonjs/loaders/glTF';
-import { SceneLoader, Axis, Space } from '@babylonjs/core';
+import { SceneLoader, Axis, Space, LoadFileAsync } from '@babylonjs/core';
+
+export async function loadAll(url) {
+    const assetArrayBuffer = await
+        LoadFileAsync(url, true);
+    const assetBlob = new Blob([assetArrayBuffer]);
+    const assetUrl = URL.createObjectURL(assetBlob);
+    return assetUrl
+    // Need to use the following line in the actual code.
+    // await SceneLoader.AppendAsync(assetUrl,undefined,scene,undefined,".glb")
+}
 
 export async function xhrAll(url) {
     let xhr = new XMLHttpRequest();
