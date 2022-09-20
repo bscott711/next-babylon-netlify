@@ -1,7 +1,7 @@
 import Layout from '@components/layout';
 import Viewer from '@components/Viewer';
 
-export default function LocalViewer() {
+export default function Index() {
     return (
         <Layout title={'Babylon-Viewer'}>
             <strong>Interactive Isosurface Viewer</strong>
@@ -10,4 +10,4 @@ export default function LocalViewer() {
     )
 }
 
-export { LocalViewer }
+export { Index }
