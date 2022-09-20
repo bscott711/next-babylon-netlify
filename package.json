@@ -32,5 +32,6 @@
     "eslint": "^8.23.1",
     "eslint-config-next": "^12.3.0",
     "eslint-plugin-next": "^0.0.0"
-  }
+  },
+  "main": "pages/_app.js"
 }
