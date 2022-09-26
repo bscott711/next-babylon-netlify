@@ -10,6 +10,9 @@ export default function NavBar() {
                 <Link href="/babylonviewer" passHref>
                     <button>Babylon Viewer</button>
                 </Link>
+                <Link href="/eat_d3HL60" passHref>
+                    <button>Eat d3HL60</button>
+                </Link>
                 <Link href="/changefocus" passHref>
                     <button>Changing Focus</button>
                 </Link>
